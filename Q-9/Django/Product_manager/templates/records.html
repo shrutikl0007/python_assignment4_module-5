@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+</head>
+<body>
+
+<h1>A Product Table</h1>
+
+<table id="products" style=>
+  <tr>
+    <th>ID</th>
+    <th>Product id</th>
+    <th>product name</th>
+    <th>UPDATE</th>
+    <th>DELETE</th>
+  </tr>
+  {% for one_data in all_records %}
+  <tr>
+    <td>{{one_data.id}}</td>
+    <td>{{one_data.Product_id}}</td>
+    <td>{{one_data.product_name}}</td>
+    <td><a href="{% url 'update_record' one_data.id %}">Update</a></td>
+    <td><a href="{% url 'delete_record' one_data.id %}">Delete</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
+
+
